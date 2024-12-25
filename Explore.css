@@ -1,0 +1,180 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa; /* Soft background */
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #3e8e41; /* Soft green */
+    color: white;
+    text-align: center;
+    padding: 20px 15px;
+    font-size: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header p {
+    font-size: 16px;
+    color: #d9d9d9;
+}
+
+/* Navigation Bar Styling */
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #2f6d31; /* Darker green for navigation bar */
+    padding: 10px 0;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+header ul li {
+    margin: 0 15px;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #ffffff;
+    color: #3e8e41;
+    border-radius: 4px;
+}
+
+/* Hamburger Menu Styling */
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Main Container Styling */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 30px 10px;
+    justify-items: center;
+}
+
+/* Styling for Each Place Card */
+.place {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: 320px;
+}
+
+.place:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.place img {
+    width: 100%;
+    height: 180px; /* Smaller height for the images */
+    object-fit: cover;
+    border-bottom: 2px solid #3e8e41; /* Green border */
+}
+
+/* Title Styling */
+.place h2 {
+    font-size: 18px;
+    margin: 15px;
+    color: #444;
+    text-align: center;
+}
+
+/* Description Styling */
+.place p {
+    font-size: 14px;
+    color: #666;
+    padding: 0 15px 20px;
+    text-align: justify;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    header ul {
+        flex-direction: column;
+        max-height: 0;
+    }
+
+    header ul.active {
+        max-height: 500px; /* Adjust as needed for your number of links */
+    }
+
+    header ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    header ul li a {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 20px 5px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+
+    .place h2 {
+        font-size: 16px;
+    }
+
+    .place p {
+        font-size: 13px;
+        padding: 0 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 20px;
+        padding: 18px;
+    }
+
+    .place {
+        height: 280px; /* Adjust card height for small screens */
+    }
+
+    .place h2 {
+        font-size: 14px;
+    }
+
+    .place p {
+        font-size: 12px;
+    }
+}
